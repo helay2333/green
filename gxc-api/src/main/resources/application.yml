@@ -1,0 +1,38 @@
+server:
+#  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  # tomcat默认大小2M，超过2M的文件不会被捕获，需要调整此处大小为100MB或者-1即可
+
+spring:
+  profiles:
+    active: dev
+#  banner:
+#    location: classpath:banner/banner.txt
+  servlet:
+    multipart:
+      max-file-size: 100MB      # 文件上传大小限制，设置最大值，不能超过该值，否则报错
+      #      max-file-size: 500KB      # 文件上传大小限制，设置最大值，不能超过该值，否则报错
+      max-request-size: 100MB     # 文件最大请求限制，用于批量上传
+#      max-request-size: 500KB
+
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+# 分页插件助手的配置
+pagehelper:
+  helper-dialect: MYSQL
+  support-methods-arguments: true
+knife4j:
+  production=true:
+# 日志级别
+logging:
+  level:
+    root: info
