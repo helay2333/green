@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gxc-common" />
+        <module name="gxc-model" />
+        <module name="gxc-service" />
+        <module name="gxc-mapper" />
+        <module name="gxc-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-generator-database" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gxc-api" options="-parameters" />
+      <module name="gxc-common" options="-parameters" />
+      <module name="gxc-mapper" options="-parameters" />
+      <module name="gxc-model" options="-parameters" />
+      <module name="gxc-service" options="-parameters" />
+    </option>
+  </component>
+</project>
